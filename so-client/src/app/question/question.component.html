@@ -1,0 +1,36 @@
+<div class="row border-top p-2">
+  <div class="col-md-1 text-center">
+    <div class="lead">
+      <span class="badge badge-light"> {{itemModel.score}} </span>
+    </div>
+    <div>
+      <small class="text-muted">votes</small>
+    </div>
+  </div>
+  <div class="col-md-1 text-center">
+    <div class="lead">
+      <span [class]="answerBadgeStyle"> {{itemModel.answerCount}} </span>
+    </div>
+    <div>
+      <small class="text-muted">answers</small>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <div>
+      <a class="lead" href="{{itemModel.link}}">{{itemModel.title}}</a>
+    </div>
+    <div class="row justify-content-between">
+      <div class="col-md-6" >
+        <span class="badge badge-light mr-1" *ngFor="let tag of itemModel.tags"> {{tag}} </span>
+      </div>
+      <div class="col-md-6 text-right">
+        <small class="text-muted mr-2">asked</small>
+        <small class="text-muted mr-2">{{creationDate}}</small>
+        <a class="mr-2" href="{{itemModel.owner.link}}">{{itemModel.owner.displayName}}</a>
+        <span class="badge badge-secondary mr-2" title="Reputation">
+          {{itemModel.owner.reputation}}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

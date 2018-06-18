@@ -1,0 +1,22 @@
+<div class="text-center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div class="container">
+  <div class="row mb-2">
+    <div class="col-md-11">
+      <input class="form-control" id="queryInput" placeholder="Query" [(ngModel)]="query" (keyup.enter)="search()">
+    </div>
+    <div class="col-md-1">
+      <button type="submit" class="btn btn-default" (click)="search()">Search</button>
+    </div>
+  </div>
+  <div *ngFor="let question of questions">
+    <app-item [itemModel]=question></app-item>
+  </div>
+
+  <div [hidden]="!hasMore" class="text-center m-1">
+    <button type="submit" class="btn btn-default" (click)="showMore()">Show more</button>
+  </div>
+</div>
